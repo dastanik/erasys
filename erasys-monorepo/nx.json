@@ -12,9 +12,9 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.gitlab-ci.yml"]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "686138a455701e34fed18246",
+  "nxCloudId": "6861407efb3f2c4fe6dff9ad",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -98,7 +98,7 @@
       "application": {
         "babel": true,
         "style": "tailwind",
-        "linter": "none",
+        "linter": "eslint",
         "bundler": "vite"
       },
       "component": {
@@ -106,7 +106,7 @@
       },
       "library": {
         "style": "tailwind",
-        "linter": "none"
+        "linter": "eslint"
       }
     }
   }
