@@ -4,10 +4,19 @@
   "files": [],
   "references": [
     {
+      "path": "./apps/mobile-e2e"
+    },
+    {
+      "path": "./apps/mobile"
+    },
+    {
       "path": "./web-e2e"
     },
     {
       "path": "./web"
+    },
+    {
+      "path": "./libs/shared-data-fetch"
     }
   ]
 }

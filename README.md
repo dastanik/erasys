@@ -1,6 +1,6 @@
 # Nx monorepo and stack
 
-The nx monorepo erasys-monorepo consists of two apps: web based on React and app based on React Native.
+The nx monorepo erasys-monorepo consists of two apps: web based on React and app based on React Native (15.0.1).
 
 It uses the following stack:
 ✔ Unit test runner: jest
@@ -31,10 +31,30 @@ Profile pictures source URL:
 https://www.hunqz.com/img/usr/original/0x0/${url_token}.jpg
 CORS issues are addressed
 
-The following reusable components are created:
-
-The following tests are created:
-
-# Run the project
+# Run the web project
 
 nx serve web
+
+# To run the app in development mode:
+
+npx nx start mobile
+
+# On Android simulator/device:
+
+npx nx run-android mobile
+
+# iOS simulator/device:
+
+npx nx run-ios mobile
+
+# Android release build:
+
+npx nx build-android mobile
+
+# iOS (Mac only) release build:
+
+npx nx build-ios mobile
+
+# Web build
+
+npx nx build web
