@@ -28,5 +28,9 @@
     "eslint.config.mjs"
   ],
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
-  "references": []
+  "references": [
+    {
+      "path": "../../libs/shared-data-fetch/tsconfig.lib.json"
+    }
+  ]
 }

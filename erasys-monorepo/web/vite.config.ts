@@ -40,4 +40,9 @@ export default defineConfig(() => ({
       transformMixedEsModules: true,
     },
   },
+  resolve: {
+    alias: {
+      'react-native': 'react-native-web',
+    },
+  },
 }));
