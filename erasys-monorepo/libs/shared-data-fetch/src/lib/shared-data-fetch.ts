@@ -1,7 +1,11 @@
 import { Platform } from 'react-native'; // Will only be available in React Native
+
+import { Platform } from 'react-native'; // Will only be available in React Native
 import axios from 'axios';
 
 export interface UserProfilePicture {
+  id: string;
+  owner_id: string;
   id: string;
   owner_id: string;
   url_token: string;
@@ -27,7 +31,14 @@ export async function fetchUserProfiles(): Promise<UserProfilePicture[]> {
     }
     return data.pictures as UserProfilePicture[];
   } catch (error) {
-    console.error('Failed to fetch user profiles:', error);
+    console.error('Full error details:', {
+      message: error.message,
+      name: error.name,
+      stack: error.stack,
+      isAxiosError: error.isAxiosError,
+      request: error.request,
+      response: error.response,
+    });
     return [];
   }
 }
