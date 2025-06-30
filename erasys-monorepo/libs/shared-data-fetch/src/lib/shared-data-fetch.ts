@@ -1,4 +1,5 @@
 import { Platform } from 'react-native'; // Will only be available in React Native
+import axios from 'axios';
 
 export interface UserProfilePicture {
   id: string;
@@ -11,15 +12,12 @@ export interface UserProfilePicture {
   is_public: boolean;
 }
 
-const API_URL =
-  Platform.OS === 'android' || Platform.OS === 'ios'
-    ? 'https://www.hunqz.com/api/opengrid/profiles/msescortplus'
-    : '/api/opengrid/profiles/msescortplus';
+// Removed internal API_URL constant
 
-export async function fetchUserProfiles(): Promise<UserProfilePicture[]> {
+export async function fetchUserProfiles(apiUrl: string): Promise<UserProfilePicture[]> {
   try {
-    const response = await fetch(API_URL);
-    const data = await response.json();
+    const response = await axios.get(apiUrl);
+    const data = response.data;
 
     if (!Array.isArray(data.pictures)) {
       console.warn('Expected pictures to be an array:', data.pictures);

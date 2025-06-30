@@ -29,11 +29,13 @@ function Header() {
   );
 }
 
+const API_URL = '/api/opengrid/profiles/msescortplus';
+
 export function App() {
   const [profiles, setProfiles] = useState<UserProfilePicture[]>([]);
 
   useEffect(() => {
-    fetchUserProfiles().then(setProfiles);
+    fetchUserProfiles(API_URL).then(setProfiles);
   }, []);
 
   return (
