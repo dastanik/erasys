@@ -1,11 +1,6 @@
 import { Platform } from 'react-native'; // Will only be available in React Native
 
-import { Platform } from 'react-native'; // Will only be available in React Native
-import axios from 'axios';
-
 export interface UserProfilePicture {
-  id: string;
-  owner_id: string;
   id: string;
   owner_id: string;
   url_token: string;
@@ -16,9 +11,10 @@ export interface UserProfilePicture {
   is_public: boolean;
 }
 
-const API_URL = Platform.OS === 'android' || Platform.OS === 'ios' ? 
-  'https://www.hunqz.com/api/opengrid/profiles/msescortplus' : 
-  '/api/opengrid/profiles/msescortplus';
+const API_URL =
+  Platform.OS === 'android' || Platform.OS === 'ios'
+    ? 'https://www.hunqz.com/api/opengrid/profiles/msescortplus'
+    : '/api/opengrid/profiles/msescortplus';
 
 export async function fetchUserProfiles(): Promise<UserProfilePicture[]> {
   try {
@@ -31,14 +27,7 @@ export async function fetchUserProfiles(): Promise<UserProfilePicture[]> {
     }
     return data.pictures as UserProfilePicture[];
   } catch (error) {
-    console.error('Full error details:', {
-      message: error.message,
-      name: error.name,
-      stack: error.stack,
-      isAxiosError: error.isAxiosError,
-      request: error.request,
-      response: error.response,
-    });
+    console.error('Error', error);
     return [];
   }
 }
